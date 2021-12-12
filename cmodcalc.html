@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CMOD-calculator</title>
+  <script>
+    function calculateCMOD(checkBox){
+    let userSs = document.getElementById("cmod").value
+    let userCmod = 435.59 * userSs / 13.72
+    if (checkBox = document.getElementById("myCheck").checked == true){
+        userCmod = 435 * userSs / 13720
+    }
+    if (document.getElementById("myCheck0").checked == true)
+    {
+        userCmod = (435.59 * userSs / 13.72) + 35
+    } 
+    let userRecSize = document.getElementById("recSize").value / 100
+    if(userRecSize == 0){
+        userRecSize = 1.0
+    }
+    console.log(userRecSize)
+    document.getElementById("cmodDiv").innerHTML = "Your preferred game scrollspeed is " + Math.round(userCmod/userRecSize)
+    if (checkBox = document.getElementById("myCheck").checked == true)
+    {"Your o!m scrollspeed is " + userCmod.toFixed(2)}
+  } 
+
+  function toMania(){
+    let checkBox = document.getElementById("myCheck");
+    let text = document.getElementById("text");
+    if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+  }
+
+
+
+  </script>
+  <style>
+    form{margin-left:auto;
+    margin-right:auto;}
+    
+    body {text-align: center;
+        font-family: 'ABeeZee', sans-serif;
+        align-content:center;
+        background-color: #FDFFFD;
+    }
+    table {margin-left: auto;
+            margin-right: auto;}
+    h3 {font-size: 200%;}
+  </style>
+</head>
+<body>
+  <p>GDPR Notice: Information that is gathered from visitors: log files are stored on the web server saving details such as the visitor's IP address, browser type and time of visit.These log-files are retained for 7 days, after which they are deleted. This data is strictly used for security purposes. This site uses no cookies and does not share any data to third parties.</p>
+  <h3>CMOD-calculator</h3>
+  <p>Created by Laamis, with help from Jole and Kangalioo.<br>
+  <br>
+  <br>
+  If the checkbox below is unchecked, conversion is done from o!m to Etterna<br>
+  If the checkbox below is checked, conversion is done from Etterna to o!m</p>
+  <form>
+    <label>Scrollspeed:</label> <input id="cmod" name="bet" size="3" type="text"> <input id="submit" onclick="calculateCMOD()" type="button" value="Calculate">
+  </form>Convert from Etterna to o!m:
+  <form>
+    <input id="myCheck" onclick="toMania()" type="checkbox"><br>
+    Click here if you are getting inaccurate results:<br>
+    (By default, don't enable this) <input id="myCheck0" onclick="oneToOne()" type="checkbox">
+  </form>
+  <p id="text" style="display:none">Calculation will be inversed to get an o!m SS from CMod!<br>
+  Please insert your CMod instead of o!m SS!</p><br>
+  <p>Insert your Etterna receptor size below without the %-sign! If left empty, the calculation will be made with size 100%</p>
+  <form>
+    <input id="recSize" type="text"><br>
+  </form>
+  <div id="cmodDiv"></div><br>
+  <h4>What is this tool?</h4>
+  <p>You can insert your osu!mania scroll speed to it and get an accurate Etterna/SM CMod value.<br>
+  The values have been checked frame by frame so it actually lines up with both games.</p><br>
+  <h4>How accurate is this tool?</h4><a href="https://www.youtube.com/watch?v=YPxehF5igxI" target="_blank">Here is a video comparison of different scroll speeds and receptor sizes between the games. The values were calculated using this calculator.</a>
+  <p>Huge thanks to Jole for this.</p>
+  <h4>Keep in mind that this tool will only convert the raw velocity of the notes, so differences between receptor heights will not be accounted for.</h4>
+  <p>Here are the border-values to convert from Etterna to o!m<br>
+  (The values 11-40 are extrapolated from the first 10 numbers. Decimals have been rounded to the nearest whole number and might be off by 1-2CMod)</p>
+  <table class="SSTable">
+    <thead>
+      <tr class="SSTable1strow">
+        <th>SS</th>
+        <th>Cmod min</th>
+        <th>Cmod max</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>32</td>
+        <td>62</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>63</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>95</td>
+        <td>126</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>127</td>
+        <td>158</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>159</td>
+        <td>189</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>190</td>
+        <td>221</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>222</td>
+        <td>253</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>254</td>
+        <td>285</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>286</td>
+        <td>316</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>317</td>
+        <td>348</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>349</td>
+        <td>380</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>381</td>
+        <td>412</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>413</td>
+        <td>443</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>444</td>
+        <td>475</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>476</td>
+        <td>507</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>508</td>
+        <td>539</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>540</td>
+        <td>570</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>571</td>
+        <td>602</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>603</td>
+        <td>634</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>635</td>
+        <td>666</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>666</td>
+        <td>697</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>698</td>
+        <td>729</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>730</td>
+        <td>761</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>762</td>
+        <td>793</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>793</td>
+        <td>824</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td>825</td>
+        <td>856</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td>857</td>
+        <td>888</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>889</td>
+        <td>920</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>920</td>
+        <td>952</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>952</td>
+        <td>983</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td>984</td>
+        <td>1015</td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td>1016</td>
+        <td>1047</td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td>1047</td>
+        <td>1079</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>1079</td>
+        <td>1110</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>1111</td>
+        <td>1142</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>1143</td>
+        <td>1174</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td>1174</td>
+        <td>1206</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>1206</td>
+        <td>1237</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td>1238</td>
+        <td>1269</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>1270</td>
+        <td>1301</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
